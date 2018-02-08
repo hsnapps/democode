@@ -18,11 +18,11 @@ Use these files as base and extend to update them as per requirements of assignm
 * Set System Variable PMD_HOME to c:\apps\pmd
 
 ### Installing Maven
-* Download MAven and unzip to a folder
+* Download Maven and unzip to a folder
 * set MAVEN_HOME to name of folders where it was unzipped. 
 
 ### Installing ANT
-* Download MAven and unzip to a folder
+* Download Ant and unzip to a folder
 * set ANT_HOME to name of folders where it was unzipped. 
 
 ### Additional config 
