@@ -4,7 +4,7 @@
 
 	<groupId>org.demo</groupId>
 	<artifactId>utilities</artifactId>
-	<version>1.93.8-SNAPSHOT</version>
+	<version>1.93.9-SNAPSHOT</version>
 	
 		<packaging>jar</packaging>
 	<name>utilities</name>
@@ -78,19 +78,19 @@
 	<!-- TODO -->
 	<!-- Need to set the environment variables for the above parameters for development -->
 
-	<distributionManagement>
-		<snapshotRepository>
-			<id>${env.ART_ID}</id>
-			<name>${env.ART_NAME}</name>
-			<url>${env.ART_URL}</url>
-		</snapshotRepository>
-		<repository>
-		<id>${env.REL_ART_ID}</id>
-			<name>${env.REL_ART_NAME}</name>
-			<url>${env.REL_ART_URL}</url>
-		</repository>
-
+<distributionManagement>
+	    <repository>
+        <id>libs-release-local</id>
+        <name>LAPTOP-BSV05SGP-releases</name>
+        <url>http://localhost:8081/artifactory/libs-release-local</url>
+    </repository>
+	    <snapshotRepository>
+        <id>libs-snapshot-local</id>
+        <name>LAPTOP-BSV05SGP-snapshots</name>
+        <url>http://localhost:8081/artifactory/libs-snapshot-local</url>
+    </snapshotRepository>
 	</distributionManagement>
+	
 
 	<dependencies>
 
