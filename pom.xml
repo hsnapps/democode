@@ -4,7 +4,7 @@
 
 	<groupId>org.demo</groupId>
 	<artifactId>utilities</artifactId>
-	<version>1.93.9-SNAPSHOT</version>
+	<version>1.93.10-SNAPSHOT</version>
 	
 		<packaging>jar</packaging>
 	<name>utilities</name>
