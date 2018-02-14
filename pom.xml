@@ -13,6 +13,13 @@
 	<url>https://github.com/seshagirisriram/democode</url>
 	<description>This is a demo project only.. Check code in github</description>
 	
+	    <scm>
+        <connection>scm:git:git@github.com:SeshagiriSriram/democode.git</connection>
+        <developerConnection>scm:git:git@github.com:SeshagiriSriram/demo.git</developerConnection>
+        <url>scm:git:git@github.com:SeshagiriSriram/demo.git</url>
+    </scm>
+	
+	
 <licenses>
   <license>
     <name>Apache License, Version 2.0</name>
