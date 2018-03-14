@@ -6,7 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ TestGenericComparator.class, TestHexAsciiConversion.class,
-		TestJUNITBrowser.class, TestLogger.class, TestXMLCase.class })
+		TestLogger.class, TestXMLCase.class })
 public class AllTests {
 
 }

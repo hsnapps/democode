@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.demo.utilities.TestGenericComparator" tests="28" skipped="0" failures="0" errors="0" timestamp="2018-03-05T07:24:46" hostname="LAPTOP-BSV05SGP" time="0.379">
+  <properties/>
+  <testcase name="testSortEmpNameAscNewComparator3Element" classname="org.demo.utilities.TestGenericComparator" time="0.031"/>
+  <testcase name="testSortEmpNameDescNewComparator3Element" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpNameAsc" classname="org.demo.utilities.TestGenericComparator" time="0.001"/>
+  <testcase name="testSortEmpNameDesc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpIDDesc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpareDesc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpare2StringAsc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpareAsc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpare2StringDesc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpareDesc2" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpareAsc2" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpNameAscNewComparator" classname="org.demo.utilities.TestGenericComparator" time="0.001"/>
+  <testcase name="testSortEmpIDAsc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testDoubleSort" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpNameAscNewComparator3Element" classname="org.demo.utilities.TestGenericComparator" time="0.001"/>
+  <testcase name="testSortEmpNameDescNewComparator3Element" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpNameAsc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpNameDesc" classname="org.demo.utilities.TestGenericComparator" time="0.001"/>
+  <testcase name="testSortEmpIDDesc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpareDesc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpare2StringAsc" classname="org.demo.utilities.TestGenericComparator" time="0.001"/>
+  <testcase name="testSortEmpSpareAsc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpare2StringDesc" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpareDesc2" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpSpareAsc2" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpNameAscNewComparator" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <testcase name="testSortEmpIDAsc" classname="org.demo.utilities.TestGenericComparator" time="0.001"/>
+  <testcase name="testDoubleSort" classname="org.demo.utilities.TestGenericComparator" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/C:/Users/sriram/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.9/f918aa891c5402deb6b4dc82862699bb82602a2e/slf4j-simple-1.7.9.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/C:/Users/sriram/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-log4j12/1.7.9/5586044ba34544a9318bd7508f738dc967cd5e99/slf4j-log4j12-1.7.9.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.SimpleLoggerFactory]
+]]></system-err>
+</testsuite>

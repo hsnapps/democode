@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.demo.utilities.BasicAnnotationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-03-05T07:24:46" hostname="LAPTOP-BSV05SGP" time="0.001">
+  <properties/>
+  <testcase name="test_method_1" classname="org.demo.utilities.BasicAnnotationTest" time="0.0"/>
+  <testcase name="test_method_2" classname="org.demo.utilities.BasicAnnotationTest" time="0.0"/>
+  <system-out><![CDATA[@BeforeClass - runOnceBeforeClass
+@Before - runBeforeTestMethod
+@Test - test_method_1
+@After - runAfterTestMethod
+@Before - runBeforeTestMethod
+@Test - test_method_2
+@After - runAfterTestMethod
+@AfterClass - runOnceAfterClass
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

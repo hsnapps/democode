@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.demo.utilities.TestLogger" tests="10" skipped="0" failures="0" errors="0" timestamp="2018-03-05T07:24:46" hostname="LAPTOP-BSV05SGP" time="0.347">
+  <properties/>
+  <testcase name="testGetErrorMessage5" classname="org.demo.utilities.TestLogger" time="0.019"/>
+  <testcase name="testGetErrorMessage3" classname="org.demo.utilities.TestLogger" time="0.001"/>
+  <testcase name="testGetErrorMessage1" classname="org.demo.utilities.TestLogger" time="0.002"/>
+  <testcase name="testGetErrorMessage2" classname="org.demo.utilities.TestLogger" time="0.002"/>
+  <testcase name="testGetErrorMessage4" classname="org.demo.utilities.TestLogger" time="0.002"/>
+  <testcase name="testGetErrorMessage5" classname="org.demo.utilities.TestLogger" time="0.002"/>
+  <testcase name="testGetErrorMessage3" classname="org.demo.utilities.TestLogger" time="0.001"/>
+  <testcase name="testGetErrorMessage1" classname="org.demo.utilities.TestLogger" time="0.002"/>
+  <testcase name="testGetErrorMessage2" classname="org.demo.utilities.TestLogger" time="0.001"/>
+  <testcase name="testGetErrorMessage4" classname="org.demo.utilities.TestLogger" time="0.002"/>
+  <system-out><![CDATA[***** java.lang.Exception: TEST MESSAGE
+Cause:at org.demo.utilities.ExceptionThrower.doCheck(ExceptionThrower.java:43)
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage5(TestLogger.java:75)
+***** java.lang.Exception: TEST MESSAGE
+Cause:at org.demo.utilities.ExceptionThrower.doCheck(ExceptionThrower.java:43)
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage5(TestLogger.java:75)
+]]></system-out>
+  <system-err><![CDATA[[Test worker] ERROR org.demo.utilities.ExceptionThrower - java.lang.Exception: DEAR
+Cause:at org.demo.utilities.ExceptionThrower.doYYY(ExceptionThrower.java:35)
+Cause:at org.demo.utilities.ExceptionThrower.doXXX(ExceptionThrower.java:23)
+[Test worker] INFO org.demo.utilities.TestLogger - java.lang.Exception: TEST MESSAGE
+Cause:at org.demo.utilities.ExceptionThrower.doCheck(ExceptionThrower.java:43)
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage5(TestLogger.java:75)
+[Test worker] INFO org.demo.utilities.TestLogger - java.lang.ArithmeticException: / by zero
+Cause:at org.demo.utilities.ExceptionThrower.getCounter(ExceptionThrower.java:13)
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage3(TestLogger.java:45)
+[Test worker] INFO org.demo.utilities.TestLogger - java.lang.ArithmeticException: / by zero
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage1(TestLogger.java:14)
+Cause:at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Test worker] INFO org.demo.utilities.TestLogger - java.lang.ArithmeticException: / by zero
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage2(TestLogger.java:30)
+Cause:at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Test worker] INFO org.demo.utilities.TestLogger - java.io.IOException: TESTIOEXCEPTION
+Cause:at org.demo.utilities.ExceptionThrower.doNothing(ExceptionThrower.java:18)
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage4(TestLogger.java:60)
+[Test worker] ERROR org.demo.utilities.ExceptionThrower - java.lang.Exception: DEAR
+Cause:at org.demo.utilities.ExceptionThrower.doYYY(ExceptionThrower.java:35)
+Cause:at org.demo.utilities.ExceptionThrower.doXXX(ExceptionThrower.java:23)
+[Test worker] INFO org.demo.utilities.TestLogger - java.lang.Exception: TEST MESSAGE
+Cause:at org.demo.utilities.ExceptionThrower.doCheck(ExceptionThrower.java:43)
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage5(TestLogger.java:75)
+[Test worker] INFO org.demo.utilities.TestLogger - java.lang.ArithmeticException: / by zero
+Cause:at org.demo.utilities.ExceptionThrower.getCounter(ExceptionThrower.java:13)
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage3(TestLogger.java:45)
+[Test worker] INFO org.demo.utilities.TestLogger - java.lang.ArithmeticException: / by zero
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage1(TestLogger.java:14)
+Cause:at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Test worker] INFO org.demo.utilities.TestLogger - java.lang.ArithmeticException: / by zero
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage2(TestLogger.java:30)
+Cause:at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[Test worker] INFO org.demo.utilities.TestLogger - java.io.IOException: TESTIOEXCEPTION
+Cause:at org.demo.utilities.ExceptionThrower.doNothing(ExceptionThrower.java:18)
+Cause:at org.demo.utilities.TestLogger.testGetErrorMessage4(TestLogger.java:60)
+]]></system-err>
+</testsuite>

@@ -3,7 +3,7 @@
 <!-- Ant build file (http://ant.apache.org/) for Ant 1.7.2 or above.        -->
 <!-- ====================================================================== -->
 
-<project name="utilities" default="zip"  basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant" xmlns:ac="antlib:net.sf.antcontrib"   xmlns:sonar="antlib:org.sonar.ant">
+<project name="utilities" default="antzip"  basedir="." xmlns:artifact="antlib:org.apache.maven.artifact.ant" xmlns:ac="antlib:net.sf.antcontrib"   xmlns:sonar="antlib:org.sonar.ant">
 	<tstamp><format property="MYTIME" pattern="yyyyMMddHHmmss" /></tstamp>
 
 	 <!-- ====================================================================== -->
@@ -13,6 +13,7 @@
 	<property name="installpath.pmd" value="${env.PMD_HOME}/lib"/> 
 	<property name="pmd.installpath" value="${env.PMD_HOME}/lib"/>
 	<property name="pmd.classpath" value="${env.PMD_HOME}/lib"/>
+	<property name="ant.home" value="d:/apps/ant"/>
 	  <!-- For Cobertura --> 
 	  <property name="lib.cobertura.dir" value="d:/apps/cobertura-1.9.4.1" />
 	  <property name="cobertura.jar.file" value="${lib.cobertura.dir}/cobertura.jar" />
@@ -108,7 +109,7 @@
   <!-- ====================================================================== -->
   <!-- Cleaning up target                                                     -->
   <!-- ====================================================================== -->
-  <target name="clean" description="Clean the output directory">
+  <target name="antclean" description="Clean the output directory">
 		<delete dir="${maven.build.dir}"/>
 		<delete dir="${project.3rdpartylibdir}"/>
 		<delete dir="${maven.reporting.outputDirectory}"/>
@@ -121,7 +122,7 @@
    <!-- ======================================================================  -->
 	<!-- Copy Maven dependencies                                                -->
 	<!-- ====================================================================== -->
-	<target name="maven_dep_copy" depends="clean" description="Copies Maven Dependencies into local Lib folder">
+	<target name="maven_dep_copy" depends="antclean" description="Copies Maven Dependencies into local Lib folder">
 	 <artifact:dependencies filesetId="deps.fileset" scopes="provided, test, runtime, compile">
 	      <pom file="pom.xml"/>
 	    </artifact:dependencies>
@@ -135,7 +136,7 @@
   <!-- ====================================================================== -->
   <!-- Compilation target                                                     -->
   <!-- ====================================================================== -->
-  <target name="compile" depends="maven_dep_copy" description="Compiles the code. Does a validation on PMD Rules">
+  <target name="antcompile" depends="maven_dep_copy" description="Compiles the code. Does a validation on PMD Rules">
     <mkdir dir="${maven.build.outputDir}"/>
     <javac includeantruntime="false" destdir="${maven.build.outputDir}" 
            nowarn="false"            debug="true" 
@@ -157,8 +158,8 @@
   <!-- ====================================================================== -->
   <!-- Test-compilation target                                                -->
   <!-- ====================================================================== -->
-  <target name="compile-tests" 
-          depends="compile" 
+  <target name="antcompile-tests" 
+          depends="antcompile" 
           description="Compiles the test code, unless maven's skip test property is unset">
     <mkdir dir="${maven.build.testOutputDir}"/>
     <javac includeantruntime="false" destdir="${maven.build.testOutputDir}" 
@@ -183,8 +184,8 @@
   <!-- ====================================================================== -->
   <!-- Run all tests                                                          -->
   <!-- ====================================================================== -->
-  <target name="test" 
-          depends="compile-tests" 
+  <target name="anttest" 
+          depends="antcompile-tests" 
           description="Runs the test cases">
     <mkdir dir="${maven.test.reports}"/>
     <junit haltonerror="no" failureproperty="test.failed" haltonfailure="no" printSummary="yes"  fork="true" dir=".">
@@ -248,7 +249,7 @@
   <!-- ====================================================================== -->
   <!-- Javadoc target                                                         -->
   <!-- ====================================================================== -->
-  <target name="javadoc" description="Generates the Javadoc of the application">
+  <target name="antjavadoc" description="Generates the Javadoc of the application">
     <javadoc sourcepath="${maven.build.srcDir}" 
              packagenames="*" 
              destdir="${maven.reporting.outputDirectory}/apidocs" 
@@ -271,7 +272,14 @@
              breakiterator="false"
              additionalparam="-Xdoclint:none" />
   </target>
+  
+<!--
+	<target name="hello" depends="intro">
+	  <echo>Hello from ANT </echo> 
+	</target>
+	--> 
 
+	
 	  <!-- ====================================================================== -->
 	  <!-- PMD Report                                                             -->
 	  <!-- ====================================================================== -->
@@ -301,7 +309,7 @@
   <!-- ====================================================================== -->
   <!-- Package target                                                         -->
   <!-- ====================================================================== -->
-  <target name="package" depends="compile,test" description="Package the application as a JAR/WAR whatever">
+  <target name="antpackage" depends="antcompile" description="Package the application as a JAR/WAR whatever">
 	<pathconvert property="manifest.classpath" pathsep=" ">
 	  <path refid="libpath"/>
 	  <mapper>
@@ -321,6 +329,7 @@
     	    <attribute name="Implementation-Version" value="${maven.build.version}-${MYTIME}"/> 
     	    <attribute name="Implementation-Vendor" value="SeshagiriSriram"/>
     	 	<attribute name="Class-Path" value="${manifest.classpath}"/>
+			<attribute name="Main-Class" value="org.demo.utilities.Main"/>
     	 </manifest>
    </jar>
   </target>
@@ -328,12 +337,12 @@
   <!-- ====================================================================== -->
   <!-- A dummy target for the package named after the type it creates         -->
   <!-- ====================================================================== -->
-  <target name="jar" depends="package" description="Builds the jar for the application"/>
+  <target name="antjar" depends="antpackage" description="Builds the jar for the application"/>
 
   <!-- ====================================================================== -->
   <!-- Zips files into a zip for deployment                                   -->
   <!-- ====================================================================== -->
-	  <target name="zip" depends="package" description="Zips all Resources">
+	  <target name="antzip" depends="antpackage" description="Zips all Resources">
 	  	<if>
 	  					 <equals arg1="${zipoutput}" arg2="$${zipoutput}"/>
 	  					 <then>
@@ -373,7 +382,7 @@
    <!-- ====================================================================== -->
    <!-- Installs components to Artifactory                                     -->
    <!-- ====================================================================== -->
-	<target name="install" depends="zip" description="Installs the JAR to artifactory"> 
+	<target name="antinstall" depends="antzip" description="Installs the JAR to artifactory"> 
 			<echo message="Maven is found in: ${env.MAVEN_HOME}"/>
 			<artifact:deploy file="${maven.build.dir}/${maven.build.finalName}.jar">
 			      <pom file="pom.xml"/>
@@ -394,7 +403,7 @@
   <!-- Copy files required for instrumentation                                -->
   <!-- ====================================================================== -->
 	
-	<target name="prepare" depends="clean, maven_dep_copy">
+	<target name="prepare" depends="antclean, maven_dep_copy">
 	    <mkdir dir="${maven.reporting.outputDirectory}" />
 	    <!-- cobertura directories -->
 	    <mkdir dir="${cobertura.dir}" />
@@ -418,7 +427,7 @@
   <!-- Do Actual Instrumentation                                              -->
   <!-- ====================================================================== -->
 
-	<target name="instrument" depends="prepare,compile-tests">
+	<target name="instrument" depends="prepare,antcompile-tests">
 		<echo>Class Path: ${toString:cobertura.classpath}</echo>
 	    <cobertura-instrument todir="${cob.instrumented.dir}">
 	      <fileset dir="${maven.build.outputDir}">
