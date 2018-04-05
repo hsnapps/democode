@@ -124,7 +124,7 @@
 	<!-- ====================================================================== -->
 	<target name="maven_dep_copy" depends="antclean" description="Copies Maven Dependencies into local Lib folder">
 	 <artifact:dependencies filesetId="deps.fileset" scopes="provided, test, runtime, compile">
-	      <pom file="pom.xml"/>
+	      <pom file="${build.basesrcdir}/pom.xml"/>
 	    </artifact:dependencies>
 	<mkdir dir="${project.3rdpartylibdir}"/>
 	<copy todir="${project.3rdpartylibdir}">
